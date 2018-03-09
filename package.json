@@ -1,6 +1,6 @@
 {
   "name": "simple-react-form-builder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Build forms in react with a config object",
   "main": "index.js",
   "scripts": {
