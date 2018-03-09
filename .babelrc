@@ -1,0 +1,20 @@
+{
+  "presets": [
+    "react",
+    ["env", {
+      "target": {
+        "browsers": [
+          "not ie <= 8",
+          "last 2 iOS major versions",
+          "last 2 Firefox major versions",
+          "last 2 Safari major versions",
+          "> 10% in UK"
+        ]
+      }
+    }],
+    "es2015"
+  ],
+  "plugins": [
+    [ "transform-es2015-classes", { "loose": true }]
+  ]
+}
