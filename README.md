@@ -1,7 +1,9 @@
 # form-builder
 
 Example props to generate a form with a submit function
-```onSubmit: function () {
+```
+{
+	onSubmit: function () {
     console.log('submitted')
   },
   submitClass: 'btn btn-primary',
@@ -58,4 +60,6 @@ Example props to generate a form with a submit function
         }
       }
     }
-  }```
+  }
+}
+```
