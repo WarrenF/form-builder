@@ -1,0 +1,23 @@
+{
+  "name": "simple-react-form-builder",
+  "version": "1.0.0",
+  "description": "Build forms in react with a config object",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/WarrenF/form-builder.git"
+  },
+  "keywords": [
+    "Form",
+    "Builder"
+  ],
+  "author": "Warren Fitzpatrick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WarrenF/form-builder/issues"
+  },
+  "homepage": "https://github.com/WarrenF/form-builder#readme"
+}
