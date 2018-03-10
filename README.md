@@ -1,7 +1,7 @@
-#Simple React Form Builder#
+# Simple React Form Builder
 Build simple forms with bootstrap 3 markup using config files within react.
 
-##Example useage:##
+## Example useage:
 `Example index.js`
 ```
 const FormBuilder = require('simple-react-form-builder')
@@ -14,7 +14,7 @@ render () {
 }
 ```
 
-##Example props to generate a form with a submit function that serializes form data##
+## Example props to generate a form with a submit function that serializes form data
 `Example formConfig.js`
 ```
 module.exports = {
@@ -89,7 +89,7 @@ module.exports = {
 }
 ```
 
-##Optional Props for customisation:##
+## Optional Props for customisation:
 ```
 {
   submitClass: 'btn btn-primary', //Goes onto the submit button
