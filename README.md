@@ -3,8 +3,16 @@
 Example props to generate a form with a submit function
 ```
 {
-	onSubmit: function () {
-    console.log('submitted')
+  onSubmit: function (e) {
+    const formInputs = e.target.querySelectorAll('.form-builder-input')
+    const submitObject = {}
+    Object.keys(formInputs).map((key) => {
+      const item = formInputs[key]
+      if (!item.name || item.name === '') return
+      if (item.type === 'checkbox') submitObject[item.name] = item.checked
+      else submitObject[item.name] = item.value
+    })
+    console.log(submitObject)
   },
   submitClass: 'btn btn-primary',
   inputClass: 'form-builder-input',
@@ -20,14 +28,19 @@ Example props to generate a form with a submit function
           required: 'required'
         }
       },
-      lastName: {
-        type: 'text',
-        label: 'Last Name',
+      RoomType: {
+        type: 'select',
+        label: 'Options',
         isRequired: true,
         attributes: {
-          name: 'last_name',
-          placeholder: 'Last Name',
-          required: 'required'
+          name: 'options',
+          placeholder: 'Options',
+          defaultValue: '2'
+        },
+        options: {
+          '1': 'One',
+          '2': 'Two',
+          '3': 'Three'
         }
       },
       yourEmail: {
