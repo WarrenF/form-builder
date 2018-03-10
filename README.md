@@ -1,8 +1,23 @@
-# form-builder
+*Simple React Form Builder*
+Build simple forms with bootstrap 3 markup using config files within react.
 
-Example props to generate a form with a submit function
+*Example useage:*
+`Example index.js`
 ```
-{
+const FormBuilder = require('simple-react-form-builder')
+const formProps = require('/path/to/formConfig.js')
+
+render () {
+  return(
+    <FormBuilder {...formProps} />
+  )
+}
+```
+
+*Example props to generate a form with a submit function that serializes form data*
+`Example formConfig.js`
+```
+module.exports = {
   onSubmit: function (e) {
     const formInputs = e.target.querySelectorAll('.form-builder-input')
     const submitObject = {}
@@ -14,9 +29,6 @@ Example props to generate a form with a submit function
     })
     console.log(submitObject)
   },
-  submitClass: 'btn btn-primary',
-  inputClass: 'form-builder-input',
-  checkboxContainerClass: 'checkbox form-group',
   formSettings: {
     inputs: {
       firstName: {
@@ -74,5 +86,14 @@ Example props to generate a form with a submit function
       }
     }
   }
+}
+```
+
+Optional Props for customisation:
+```
+{
+  submitClass: 'btn btn-primary', //Goes onto the submit button
+  inputClass: 'form-builder-input', //This class gets applied to all inputs generated
+  checkboxContainerClass: 'checkbox form-group' //This class gets applied to checkbox containers
 }
 ```
