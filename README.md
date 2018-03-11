@@ -40,7 +40,7 @@ module.exports = {
           required: 'required'
         }
       },
-      RoomType: {
+      someOptions: {
         type: 'select',
         label: 'Options',
         isRequired: true,
