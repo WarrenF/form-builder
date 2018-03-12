@@ -23,7 +23,7 @@ defaults: &defaults
     - image: circleci/node:8.9.4
 
 jobs:
-  build:
+  install:
     <<: *defaults
     steps:
       # Checkout the code from the branch into the working_directory
@@ -38,17 +38,12 @@ jobs:
       - run:
           name: Installing
           command: npm install
-      - *save_cache
-  lint:
-    <<: *defaults
-    steps:
-      # Checkout the code from the branch into the working_directory
-      - *attach_workspace
-      # Restore dependencies from cache
-      - *restore_cache
       - run:
           name: Lint
           command: npm run lint
+      - run:
+          name: Transpile
+          command: npm run trans
       - *save_cache
   deploy:
     <<: *defaults
@@ -61,19 +56,14 @@ jobs:
           name: Deploy to NPM
           command: echo -e "$NPM_USER\n$NPM_PASS\n$NPM_EMAIL" | npm login && npm publish
       - *save_cache
-
 workflows:
   version: 2
   runner:
     jobs:
-      - build
-      - lint:
-        requires:
-          - install
+      - install
       - deploy:
           requires:
             - install
-            - lint
           filters:
             branches:
               only: master
