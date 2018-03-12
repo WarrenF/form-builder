@@ -54,7 +54,7 @@ jobs:
       - *restore_cache
       - run:
           name: Login to NPM
-          command: echo -e "$NPM_USER\n$NPM_PASS\n$NPM_EMAIL" | npm login
+          command: echo "//registry.npmjs.org/:_authToken=3cea122f-c891-467f-b01e-ac090f18fe06" > ~/.npmrc
       - run:
           name: Publish to NPM
           command: npm publish
