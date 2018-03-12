@@ -2,7 +2,7 @@ version: 2
 
 references:
   workspace_root: &workspace_root
-    /home/circleci/form-builder
+    ~/form-builder
   cache_key: &cache_key
     dependencies-{{ .Environment.CIRCLE_SHA1 }}
   attach_workspace: &attach_workspace
