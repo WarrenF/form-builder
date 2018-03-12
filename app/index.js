@@ -7,9 +7,6 @@ import { object, func, string } from 'prop-types'
 class FormBuilder extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      error: false
-    }
   }
 
   buildInputs () {
