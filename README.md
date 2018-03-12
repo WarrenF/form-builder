@@ -1,6 +1,8 @@
 # Simple React Form Builder
 Build simple forms with bootstrap 3 markup using config files within react.
 
+## Requires REACT 16
+
 ## Example useage:
 `Example index.js`
 ```
