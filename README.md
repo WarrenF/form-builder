@@ -4,7 +4,7 @@ Build simple forms with bootstrap 3 markup using config files within react.
 ## Example useage:
 `Example index.js`
 ```
-const FormBuilder = require('simple-react-form-builder')
+import FormBuilder from 'simple-react-form-builder'
 const formProps = require('/path/to/formConfig.js')
 
 render () {
