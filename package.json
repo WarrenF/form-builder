@@ -1,12 +1,20 @@
 {
   "name": "simple-react-form-builder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build forms in react with a config object",
   "main": "lib/index.js",
   "scripts": {
     "webpack": "webpack-dev-server --config ./webpack/config.dev.js",
     "start": "npm run webpack",
-    "trans": "babel app -d lib"
+    "trans": "babel app -d lib",
+    "lintfix": "standard 'app/*' --fix --verbose | snazzy && echo Linted like a boss! ✔",
+    "lint": "standard 'app/*' --verbose | snazzy && echo Linted like a boss! ✔"
+  },
+  "standard": {
+    "ignore": [
+      "**/preview/*",
+      "**/lib/*"
+    ]
   },
   "repository": {
     "type": "git",
@@ -37,6 +45,8 @@
     "html-webpack-plugin": "^3.0.6",
     "path": "^0.12.7",
     "react-dom": "^16.2.0",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.11",
     "webpack-dev-server": "^3.1.1"
