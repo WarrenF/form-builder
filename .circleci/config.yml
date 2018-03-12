@@ -61,6 +61,7 @@ jobs:
           name: Deploy to NPM
           command: echo -e "$NPM_USER\n$NPM_PASS\n$NPM_EMAIL" | npm login && npm publish
       - *save_cache
+
 workflows:
   version: 2
   runner:
