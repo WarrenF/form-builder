@@ -39,11 +39,8 @@ jobs:
           name: Installing
           command: npm install
       - run:
-          name: Lint
-          command: npm run lint
-      - run:
-          name: Transpile
-          command: npm run trans
+          name: Lint Test and Transpile
+          command: npm run test
       - *save_cache
   deploy:
     <<: *defaults
