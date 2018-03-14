@@ -1,16 +1,28 @@
 {
   "name": "simple-react-form-builder",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Build forms in react with a config object",
   "main": "lib/index.js",
   "scripts": {
-    "webpack": "webpack-dev-server --config ./webpack/config.dev.js",
-    "start": "npm run webpack",
-    "trans": "babel app -d lib",
+    "coverage": "npm run trans && nyc mocha && nyc check-coverage",
     "lintfix": "standard 'app/*' --fix --verbose | snazzy && echo Linted like a boss! ✔",
-    "lint": "standard 'app/*' --verbose | snazzy && echo Linted like a boss! ✔"
+    "lint": "standard 'app/*' --verbose | snazzy && echo Linted like a boss! ✔",
+    "start": "npm run webpack",
+    "test": "npm run lint && npm run coverage",
+    "trans": "babel app -d lib",
+    "webpack": "webpack-dev-server --config ./webpack/config.dev.js"
   },
   "standard": {
+    "globals": [
+      "after",
+      "afterEach",
+      "before",
+      "beforeEach",
+      "context",
+      "describe",
+      "expect",
+      "it"
+    ],
     "ignore": [
       "**/preview/*",
       "**/lib/*"
@@ -38,11 +50,17 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
+    "babel-plugin-istanbul": "^4.1.5",
     "babel-plugin-transform-es2015-classes": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "html-webpack-plugin": "^3.0.6",
+    "mocha": "^5.0.4",
+    "nyc": "^11.6.0",
     "path": "^0.12.7",
     "react-dom": "^16.2.0",
     "snazzy": "^7.1.1",

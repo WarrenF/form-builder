@@ -1,2 +1,10 @@
 preview
 app
+coverage
+config
+webpack
+test
+.nyc_output
+.circleci
+.babelrc
+.nvmrc

@@ -1,0 +1,17 @@
+{
+  "all": true,
+  "instrument": false,
+  "sourceMap": false,
+  "lines": 90,
+  "reporter": [
+    "html",
+    "text",
+    "json-summary"
+  ],
+  "include": [
+    "lib"
+  ],
+  "require": [
+    "babel-register"
+  ]
+}
