@@ -5,6 +5,7 @@ config
 webpack
 test
 .nyc_output
+.nycrc
 .circleci
 .babelrc
 .nvmrc
