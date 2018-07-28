@@ -77,6 +77,10 @@ class Input extends Component {
     switch (inputSettings.type) {
       case 'text':
       case 'email':
+      case 'number':
+      case 'password':
+      case 'file':
+      case 'range':
         return this.buildInput(inputSettings)
       case 'hidden':
         return this.buildHiddenInput(inputSettings)
