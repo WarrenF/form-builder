@@ -2,26 +2,23 @@
 
 import React, { Component } from 'react'
 import Input from './components/input'
-import { object, func, string } from 'prop-types'
+import {object, func, string} from 'prop-types'
 
 class FormBuilder extends Component {
   buildInputs () {
-    const {formSettings, inputClass} = this.props
-    const {inputs} = formSettings
-    return Object.keys(inputs).map((key) => {
-      return (
-        <Input key={key} inputSettings={inputs[key]} inputClass={inputClass} />
-      )
-    })
+    const {inputs, cookies, inputClass} = this.props
+    return Object.keys(inputs).map((key) => <Input key={key} cookies={cookies} inputSettings={inputs[key]} inputClass={inputClass} />)
   }
 
   render () {
-    const allInputs = this.buildInputs()
-    const { onSubmit, submitClass } = this.props
+    const {onSubmit, submitClass, submitText, formAction} = this.props
+    const formProps = {}
+    if (onSubmit) formProps.onSubmit = onSubmit
+    if (formAction) formProps.formAction = formAction
     return (
-      <form action='javascript:void(0)' onSubmit={onSubmit}>
-        {allInputs}
-        <button type='submit' className={submitClass}>Submit</button>
+      <form {...formProps}>
+        {this.buildInputs()}
+        <button type='submit' className={submitClass}>{submitText}</button>
       </form>
     )
   }
@@ -29,13 +26,17 @@ class FormBuilder extends Component {
 
 FormBuilder.propTypes = {
   onSubmit: func.isRequired,
-  formSettings: object.isRequired,
+  inputs: object,
   submitClass: string,
+  submitText: string,
   inputClass: string,
-  checkboxContainerClass: string
+  checkboxContainerClass: string,
+  action: string,
+  cookies: object
 }
 
 FormBuilder.defaultProps = {
+  submitText: 'Submit',
   submitClass: 'btn btn-primary',
   inputClass: 'form-builder-input',
   checkboxContainerClass: 'checkbox form-group'
