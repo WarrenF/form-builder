@@ -1,6 +1,6 @@
 {
   "name": "simple-react-form-builder",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "Build forms in react with a config object",
   "main": "lib/index.js",
   "scripts": {
@@ -44,11 +44,12 @@
   "homepage": "https://github.com/WarrenF/form-builder#readme",
   "dependencies": {
     "prop-types": "^15.6.1",
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "react-cookies": "^0.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-istanbul": "^4.1.5",
     "babel-plugin-transform-es2015-classes": "^6.24.1",

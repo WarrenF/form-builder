@@ -2,7 +2,7 @@
   "all": true,
   "instrument": false,
   "sourceMap": false,
-  "lines": 90,
+  "lines": 80,
   "reporter": [
     "html",
     "text",

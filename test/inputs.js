@@ -11,6 +11,7 @@ describe('Builds a select', () => {
 
   before(() => {
     props = testConfig.selectInputSettings
+    props.cookies = testConfig.allProps.cookies
     component = shallow(<Input {...props} />)
   })
 
@@ -30,6 +31,7 @@ describe('Builds an input', () => {
 
   before(() => {
     props = testConfig.textInputSettings
+    props.cookies = testConfig.allProps.cookies
     component = shallow(<Input {...props} />)
   })
 
@@ -46,6 +48,7 @@ describe('Builds an textarea', () => {
 
   before(() => {
     props = testConfig.textAreaSettings
+    props.cookies = testConfig.allProps.cookies
     component = shallow(<Input {...props} />)
   })
 
@@ -62,6 +65,7 @@ describe('Builds a checkbox', () => {
 
   before(() => {
     props = testConfig.checkboxSettings
+    props.cookies = testConfig.allProps.cookies
     component = shallow(<Input {...props} />)
   })
 
@@ -78,6 +82,7 @@ describe('Builds a hidden input', () => {
 
   before(() => {
     props = testConfig.hiddenInputSettings
+    props.cookies = testConfig.allProps.cookies
     component = shallow(<Input {...props} />)
   })
 
@@ -94,6 +99,7 @@ describe('Attempt to build an input without a type', () => {
 
   before(() => {
     props = testConfig.invalidInputSettings
+    props.cookies = testConfig.allProps.cookies
     component = shallow(<Input {...props} />)
   })
 
@@ -110,6 +116,7 @@ describe('Attempt to build a select without any options', () => {
 
   before(() => {
     props = testConfig.selectWithNoOptionsInputSettings
+    props.cookies = testConfig.allProps.cookies
     component = shallow(<Input {...props} />)
   })
 
