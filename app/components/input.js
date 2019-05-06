@@ -5,9 +5,10 @@ import cookie from 'react-cookies'
 class Input extends Component {
   constructor (props) {
     super(props)
+    const { defaultValue = false, value = false } = props.inputSettings.attributes
     let state = {
-      value: props.defaultValue || props.value || '',
-      attributes: { }
+      value: defaultValue || value || '',
+      attributes: {}
     }
     const { attributes = { } } = props.inputSettings
     Object.keys(attributes).forEach(key => {
