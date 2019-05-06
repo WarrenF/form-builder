@@ -39,7 +39,7 @@ jobs:
           name: Installing
           command: npm install
       - run:
-          name: Lint Test and Transpile
+          name: Lint, Test
           command: npm run test
       - *save_cache
   deploy:
@@ -49,6 +49,9 @@ jobs:
       - *attach_workspace
       # Restore dependencies from cache
       - *restore_cache
+      - run:
+          name: Transpile
+          command: npm run trans
       - run:
           name: Login to NPM
           command: echo $NPM_AUTH > ~/.npmrc
