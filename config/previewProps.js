@@ -18,10 +18,7 @@ module.exports = {
   inputClass: 'form-builder-input',
   checkboxContainerClass: 'checkbox form-group',
   formAction: 'javascript:void(0)',
-  cookies: {
-    namePrefix: 'example_cookies',
-    expires
-  },
+  cookies: {},
   inputs: {
     firstName: {
       type: 'text',

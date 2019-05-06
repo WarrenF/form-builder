@@ -5,10 +5,12 @@ import cookie from 'react-cookies'
 class Input extends Component {
   constructor (props) {
     super(props)
+    const { defaultValue = false, value = false } = props.inputSettings.attributes
     let state = {
-      value: props.defaultValue || props.value || '',
+      value: defaultValue || value || '',
       attributes: {}
     }
+    console.log(props)
     const {attributes = {}} = props.inputSettings
     for (var key in attributes) {
       if (!/value|defaultValue/.test(key)) state.attributes[key] = attributes[key]
@@ -21,9 +23,9 @@ class Input extends Component {
     //Check if cookies are enabled, then load them in
     const {cookies} = this.props
     const {attributes: {name}} = this.state
-    if (!cookies || !name) return
-    const value = cookie.load(`${cookies.namePrefix}_${name}`)
-    if (value) this.setState({value})
+    if (!name || !cookies.namePrefix) return
+    const val = cookie.load(`${cookies.namePrefix}_${name}`)
+    if (val) this.setState({value: val})
   }
 
   storeCookie () {
@@ -118,6 +120,7 @@ class Input extends Component {
 
   render () {
     const {inputSettings} = this.props
+    console.log(this.state)
     if (!inputSettings.type) return null
     switch (inputSettings.type) {
       case 'hidden':
@@ -135,7 +138,7 @@ class Input extends Component {
 }
 
 Input.defaultProps = {
-  cookies: false,
+  cookies: {},
   inputSettings: {}
 }
 
