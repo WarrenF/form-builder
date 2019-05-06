@@ -1,23 +1,19 @@
-'use strict'
-
 import React, { Component } from 'react'
 import Input from './components/input'
 import {object, func, string} from 'prop-types'
 
 class FormBuilder extends Component {
   buildInputs () {
-    const {inputs, cookies, inputClass} = this.props
+    const { inputs, cookies, inputClass } = this.props
     return Object.keys(inputs).map((key) => <Input key={key} cookies={cookies} inputSettings={inputs[key]} inputClass={inputClass} />)
   }
 
   render () {
-    const {onSubmit, submitClass, submitText, formAction} = this.props
-    const formProps = {}
-    if (onSubmit) formProps.onSubmit = onSubmit
-    if (formAction) formProps.formAction = formAction
+    const { onSubmit, submitClass, submitText, formAction } = this.props
+    const inputs = this.buildInputs()
     return (
-      <form {...formProps}>
-        {this.buildInputs()}
+      <form {...{ onSubmit, formAction }}>
+        {inputs}
         <button type='submit' className={submitClass}>{submitText}</button>
       </form>
     )
@@ -36,10 +32,13 @@ FormBuilder.propTypes = {
 }
 
 FormBuilder.defaultProps = {
+  inputs: { },
+  onSubmit: null,
+  formAction: null,
   submitText: 'Submit',
   submitClass: 'btn btn-primary',
   inputClass: 'form-builder-input',
   checkboxContainerClass: 'checkbox form-group'
 }
 
-export default FormBuilder
+module.exports = FormBuilder

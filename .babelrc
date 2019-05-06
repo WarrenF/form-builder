@@ -14,8 +14,12 @@
     }],
     "es2015"
   ],
-  "plugins": [
-    "babel-plugin-istanbul",
-    [ "transform-es2015-classes", { "loose": true }]
-  ]
+  "env": {
+    "coverage": {
+      "plugins": [
+        "babel-plugin-istanbul",
+        [ "transform-es2015-classes", { "loose": true }]
+      ]
+    }
+  }
 }

@@ -4,7 +4,7 @@
   "description": "Build forms in react with a config object",
   "main": "lib/index.js",
   "scripts": {
-    "coverage": "npm run trans && nyc mocha && nyc check-coverage",
+    "coverage": "BABEL_ENV=coverage nyc mocha",
     "lintfix": "standard 'app/*' --fix --verbose | snazzy && echo Linted like a boss! ✔",
     "lint": "standard 'app/*' --verbose | snazzy && echo Linted like a boss! ✔",
     "start": "npm run webpack",
