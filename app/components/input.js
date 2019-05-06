@@ -10,7 +10,6 @@ class Input extends Component {
       value: defaultValue || value || '',
       attributes: {}
     }
-    console.log(props)
     const {attributes = {}} = props.inputSettings
     for (var key in attributes) {
       if (!/value|defaultValue/.test(key)) state.attributes[key] = attributes[key]
@@ -120,7 +119,6 @@ class Input extends Component {
 
   render () {
     const {inputSettings} = this.props
-    console.log(this.state)
     if (!inputSettings.type) return null
     switch (inputSettings.type) {
       case 'hidden':
