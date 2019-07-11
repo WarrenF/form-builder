@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Input from './components/input'
-import {object, func, string} from 'prop-types'
+import {object, func, string, bool} from 'prop-types'
 
 class FormBuilder extends Component {
   buildInputs () {
@@ -9,12 +9,12 @@ class FormBuilder extends Component {
   }
 
   render () {
-    const { onSubmit, submitClass, submitText, formAction } = this.props
+    const { onSubmit, submitClass, submitText, formAction, submitButton } = this.props
     const inputs = this.buildInputs()
     return (
       <form {...{ onSubmit, formAction }}>
         {inputs}
-        <button type='submit' className={submitClass}>{submitText}</button>
+        {submitButton && <button type='submit' className={submitClass}>{submitText}</button>}
       </form>
     )
   }
@@ -28,7 +28,8 @@ FormBuilder.propTypes = {
   inputClass: string,
   checkboxContainerClass: string,
   action: string,
-  cookies: object
+  cookies: object,
+  submitButton: bool
 }
 
 FormBuilder.defaultProps = {
@@ -38,7 +39,8 @@ FormBuilder.defaultProps = {
   submitText: 'Submit',
   submitClass: 'btn btn-primary',
   inputClass: 'form-builder-input',
-  checkboxContainerClass: 'checkbox form-group'
+  checkboxContainerClass: 'checkbox form-group',
+  submitButton: true
 }
 
 module.exports = FormBuilder

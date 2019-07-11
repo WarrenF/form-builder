@@ -125,6 +125,7 @@ If you want to include cookies you can use the `cookies` prop, everything in the
   formAction: '/where-to-submit.html',
   submitClass: 'btn btn-primary', // Goes onto the submit button
   inputClass: 'form-builder-input', // This class gets applied to all inputs generated
-  checkboxContainerClass: 'checkbox form-group' // This class gets applied to checkbox containers
+  checkboxContainerClass: 'checkbox form-group', // This class gets applied to checkbox containers
+  submitButton: false // Set to false to not render a submit button
 }
 ```
